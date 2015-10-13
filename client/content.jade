@@ -1,0 +1,14 @@
+template(name="appContent")
+  .jumbotron
+    h1 Watch the ripple effect on newly created buttons!
+    +hello
+
+
+
+
+template(name="hello")
+  button.btn.btn-info(type="button") Click Me
+  hr
+  each buttons
+    button.btn.btn-primary(type="button") {{name}}
+    br

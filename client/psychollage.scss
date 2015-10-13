@@ -1,0 +1,48 @@
+body {
+  background: #dddddd;
+}
+
+.navbar .nav,
+.navbar .nav > li {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px;
+}
+
+/*$navbar-color: #4c25e9;
+.navbar-default {
+  background-color: transparent !important;
+  background: linear-gradient(to left, transparent 0%, $navbar-color 17%, $navbar-color 83%, transparent 100%);
+}
+*/
+.navbar-header {
+  display: inline-block;
+  float: left;
+}
+
+.navbar-inner {
+    text-align: center;
+}
+
+.navbar-fixed-top {
+  right: inherit;
+  left: inherit;
+  width: inherit;
+}
+
+#content {
+  padding: 15px;
+  margin-top: 35px;
+}
+
+@media (min-width: 768px) {
+
+  .navbar {
+    margin-left: -4px;
+  }
+
+  #content {
+    margin-top: 65px;
+  }
+}

@@ -1,0 +1,21 @@
+head
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+
+body
+  .row
+    .col-sm-2
+    .col-sm-8.col-xs-12
+      .navbar.navbar-material-indigo.navbar-fixed-top.shadow-z-2
+        .container-fluid.navbar-inner
+          .navbar-header
+            a.navbar-brand(href="#") Brand
+          
+          ul.nav.navbar-nav
+            li
+              a(href="#") Active
+            li
+              a(href="#") Link
+      
+      #content.row
+        +yield
+    .col-sm-2
