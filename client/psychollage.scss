@@ -1,3 +1,6 @@
+@import "{francocatena:compass}/compass";
+
+
 body {
   background: #dddddd;
 }
@@ -32,12 +35,12 @@ body {
 }
 
 #content {
+  /*@include single-transition(all, 300ms, ease-in);*/
   padding: 15px;
   margin-top: 35px;
 }
 
 @media (min-width: 768px) {
-
   .navbar {
     margin-left: -4px;
   }

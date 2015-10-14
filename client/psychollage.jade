@@ -1,21 +1,22 @@
 head
   meta(name="viewport", content="width=device-width, initial-scale=1")
 
-body
+
+template(name="appBody")
   .row
     .col-sm-2
     .col-sm-8.col-xs-12
       .navbar.navbar-material-indigo.navbar-fixed-top.shadow-z-2
         .container-fluid.navbar-inner
           .navbar-header
-            a.navbar-brand(href="#") Brand
+            a.navbar-brand(href="/") Brand
           
           ul.nav.navbar-nav
             li
-              a(href="#") Active
+              a(href="{{pathFor 'collage'}}") Sample Collage
             li
-              a(href="#") Link
-      
+              a(href="{{pathFor 'hello'}}") Hello
+
       #content.row
         +yield
     .col-sm-2
