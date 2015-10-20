@@ -14,3 +14,7 @@ Template.hello.events({
     $.material.init();
   }
 });
+
+Template.appBody.rendered = function() {
+  $.material.init();
+};
