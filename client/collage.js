@@ -8,7 +8,7 @@ function randInt(min, max) {
 
 function fetchImages() {
   var images = [];
-  var count = randInt(3, 6);
+  var count = randInt(4, 7);
   for (var i = 0; i < count; i++) {
     images.push({
       address: "http://lorempixel.com/" + randInt(100, 280) + "/" + randInt(100, 280)

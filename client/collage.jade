@@ -1,9 +1,13 @@
 template(name="collage")
-  .jumbotron#images
-    #collage
+  .jumbotron#image-container
+    #images
       each images
         +imagePiece
 
+    button.next-button.btn.btn-fab.btn-raised.btn-material-indigo
+      i.mdi-navigation-arrow-forward
+
 template(name="imagePiece")
-  //- a(href="{{pathFor 'collage'}}")
-  img(src=address)
+  div
+    a(href="{{pathFor 'collage'}}")
+      img(src=address)
