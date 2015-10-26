@@ -72,12 +72,12 @@ body {
 }
 
 #images {
-  overflow: scroll;
   flex: auto;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
   align-items: stretch;
+  overflow: scroll;
 
   padding: 5%;
   // height: 0px; // no idea why it works...

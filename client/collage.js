@@ -1,25 +1,34 @@
 'use strict';
 
 
-// Credit: stackoverflow answer by Ionuț G. Stan
-function randInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// Tracker.autorun(function(){
+//    Meteor.subscribe("images", function(){
+//       console.log(Images, Images.find(), Images.find().fetch());
+//    });
+// });
 
-function fetchImages() {
-  var images = [];
-  var count = randInt(4, 7);
-  for (var i = 0; i < count; i++) {
-    images.push({
-      address: "http://lorempixel.com/" + randInt(100, 280) + "/" + randInt(100, 280)
-    });
-  }
-
-  return images;
-};
 
 Template.collage.helpers({
-  images: fetchImages(),
+  images: function() {
+
+    // Inefficiently getting everything and then randomly picking however many we want
+    // A probable solution is using mongoDB's geospatial indices if we actually see a
+    // noticable performance hit considering the small number of images we have.
+    // FIXME if bottleneck
+    var images = _.shuffle(Images.find().fetch());
+
+    var count = randInt(4, 7);
+    // return _.take(images, count);
+    images = _.rest(images, count);
+    return Session.get('collage');
+  }
+});
+
+
+Template.collage.events({
+  'click .next-button': function() {
+    document.location.reload(true);
+  }
 });
 
 Template.imagePiece.events({
@@ -28,3 +37,6 @@ Template.imagePiece.events({
   }
 });
 
+  Meteor.subscribe('images');
+  var images = Images.find().fetch();
+  console.log("Subscribed to " + images.length + " images...");

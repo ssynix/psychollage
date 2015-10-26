@@ -4,7 +4,7 @@ template(name="collage")
       each images
         +imagePiece
 
-    button.next-button.btn.btn-fab.btn-raised.btn-material-indigo
+    a.next-button.btn.btn-fab.btn-raised.btn-material-indigo(href="{{pathFor 'collage'}}")
       i.mdi-navigation-arrow-forward
 
 template(name="imagePiece")
