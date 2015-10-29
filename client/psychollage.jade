@@ -13,10 +13,11 @@ template(name="appBody")
           
           ul.nav.navbar-nav
             li
-              a(href="{{pathFor 'collage'}}") Sample Collage
+              a(href="{{pathFor 'newTest'}}") Start the test!
             li
               a(href="{{pathFor 'hello'}}") Lol
 
       #content.row
         +yield
     .col-sm-2
+      p {{results}}

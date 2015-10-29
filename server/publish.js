@@ -14,7 +14,6 @@ Meteor.startup(function () {
     
     for(var i = 0; i < 100; i++) {
       Images.insert({
-        id: i,
         personalityVector: {
           I: randInt(0, 100),
           N: randInt(0, 100),

@@ -1,0 +1,61 @@
+#image-container {
+  flex: auto;
+  display: flex;
+  padding: 0;
+  position: relative;
+}
+
+.next-button {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+#images {
+  flex: auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: stretch;
+  overflow: scroll;
+
+  padding: 5%;
+  // height: 0px; // no idea why it works...
+
+  .image {
+    flex: auto;
+    position: relative; // To absolutely position the dark overlay
+    // width: 200px;
+    // min-width: 0;
+  }
+
+  img {
+    // min-height: 0%;
+    // min-width: 0%;
+    // max-height: 100%;
+    // max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// This is all added to make the 'darkened overlay on hover' effect, also to keep that when selected
+.image {
+  &:after {
+    content: '\A';
+    position: absolute;
+    width: 100%; height :100%;
+    top:0 ; left: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover:after, &.selected:after {
+    opacity: 1;
+  }
+
+  &.selected {
+    box-shadow: 0px 0px 20px 5px gray;
+  }
+}

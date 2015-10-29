@@ -1,0 +1,11 @@
+template(name="modal")
+  .modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal", aria-hidden="true") &#215;
+          h4.modal-title {{title}}
+        .modal-body
+          p {{body}}
+        .modal-footer
+          button.btn.btn-primary#modalButton {{buttonText}}
