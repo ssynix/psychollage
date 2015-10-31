@@ -1,12 +1,10 @@
 template(name="collage")
-  .jumbotron#image-container
-    #images
-      each images
-        +imagePiece
+  #images
+    each images
+      +imagePiece
 
-    .next-collage.next-button.btn.btn-fab.btn-raised.btn-material-indigo
-      i.mdi-navigation-arrow-forward
+  .next-collage.next-button.btn.btn-fab.btn-raised.btn-material-indigo
+    i.mdi-navigation-arrow-forward
 
 template(name="imagePiece")
-  .image
-    img(src=address, data-id=_id)
+  .image(style="background-image: url('{{address}}')", data-id=_id)

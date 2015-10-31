@@ -18,12 +18,6 @@ body {
     margin: 0px;
 }
 
-/*$navbar-color: #4c25e9;
-.navbar-default {
-  background-color: transparent !important;
-  background: linear-gradient(to left, transparent 0%, $navbar-color 17%, $navbar-color 83%, transparent 100%);
-}
-*/
 .navbar-header {
   display: inline-block;
   float: left;
@@ -58,3 +52,10 @@ body {
   }
 }
 
+#content-container {
+  flex: auto;
+  display: flex;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}

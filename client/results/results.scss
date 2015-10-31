@@ -1,0 +1,43 @@
+.center {
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.progress {
+  height: 20px;
+  width: 50%;
+  max-width: 500px;
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+.result-label {
+  display: inline-block;
+  width: 5em;
+  margin: 0px;
+  margin-bottom: 5px;
+
+  &.left {
+    text-align: right;
+    margin-left: 20px;
+    margin-right: 5px;
+  }
+
+  &.right {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 20px;
+  }
+}
+
+.result-title {
+  margin-bottom: 20px;
+}
+
+#results.container {
+  width: 100%;
+}

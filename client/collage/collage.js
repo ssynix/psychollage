@@ -35,7 +35,7 @@ var collectResults = function() {
   }
 
   $selectedImages.each(function() {
-    var imageID = $(this).find('img').data('id');
+    var imageID = $(this).data('id');
     var personalityVector = Images.findOne(imageID).personalityVector;
 
     var results = Session.get('results');
@@ -48,15 +48,45 @@ var collectResults = function() {
   return true;
 };
 
+var imagesTransitionOut = function() {
+  var $images = $('#images');
+  // Move the entire #images div to the left, then put it all the way to the right
+  // so the next set of images can swoop in from the right
+  $images.animate({ left: '-150%' }, 800, function() {
+    $images.css('left', '150%');
+  });
+};
+
+var imagesTransitionIn = function() {
+  var $images = $('#images');
+  // Wait till animations are finished
+  $images.promise().done(function() {
+    // Also wait till all background images are loaded
+    $images.imagesLoaded({ background: '.image' }, function() {
+      $images.animate({ left: '0' }, 800);
+    });
+  });
+};
+
 var nextCollage = function() {
   var images = Session.get('images');
-  var count = randInt(4, 7);
+  if(images === undefined || images.length == 0) {
+    Router.go('newTest');
+    return
+  }
+  imagesTransitionOut();
+
+  var count = randInt(4, 6);
   var collage = _.take(images, count);
   var reducedImages = _.rest(images, count);
 
   Session.set('images', reducedImages);
-  Session.set('collage', collage);
 
+  // We don't wanna trigger the reactive loading of images when the animation is in progress
+  $('#images').promise().done(function() {
+    Session.set('collage', collage);
+    imagesTransitionIn();
+  });
   // TODO running out of images
 };
 
@@ -72,6 +102,8 @@ Template.collage.helpers({
 });
 
 Template.collage.rendered = function() {
+  var collage = Session.get('collage');
+  if(collage && collage.length) return;
   nextCollage();
 };
 

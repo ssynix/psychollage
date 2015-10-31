@@ -19,8 +19,3 @@ Template.appBody.rendered = function() {
   $.material.init();
 };
 
-Template.appBody.helpers({
-  results: function() {
-    return JSON.stringify(Session.get('results'), null, 4);
-  },
-});

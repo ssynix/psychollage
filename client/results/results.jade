@@ -1,0 +1,33 @@
+template(name='results')
+  #results.container
+    .row
+      .col-xs-12.center.nowrap
+        h2.result-title Results
+
+    .row
+      .col-xs-12.center.nowrap
+        h5.result-label.left Introversion
+        .progress.progress-striped.active
+          .progress-bar(style="width: {{ result.I }}")
+        h5.result-label.right Extraversion
+
+    .row
+      .col-xs-12.center.nowrap
+        h5.result-label.left Intuition
+        .progress.progress-striped.active
+          .progress-bar.progress-bar-warning(style="width: {{ result.N }}")
+        h5.result-label.right Sensing
+
+    .row
+      .col-xs-12.center.nowrap
+        h5.result-label.left Thinking
+        .progress.progress-striped.active
+          .progress-bar.progress-bar-success(style="width: {{ result.T }}")
+        h5.result-label.right Feeling
+
+    .row
+      .col-xs-12.center.nowrap
+        h5.result-label.left Perceiving
+        .progress.progress-striped.active
+          .progress-bar.progress-bar-danger(style="width: {{ result.P }}")
+        h5.result-label.right Judging

@@ -20,7 +20,7 @@ Meteor.startup(function () {
           T: randInt(0, 100),
           P: randInt(0, 100)
         },
-        address: "http://lorempixel.com/" + randInt(100, 380) + "/" + randInt(100, 280)
+        address: "http://lorempixel.com/" + randInt(300, 380) + "/" + randInt(300, 380)
       });
     }
   }

@@ -18,6 +18,6 @@ template(name="appBody")
               a(href="{{pathFor 'hello'}}") Lol
 
       #content.row
-        +yield
+        #content-container.jumbotron
+          +yield
     .col-sm-2
-      p {{results}}
