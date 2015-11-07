@@ -61,7 +61,7 @@ var imagesTransitionIn = function() {
   var $images = $('#images');
   // Wait till animations are finished
   $images.promise().done(function() {
-    // Also wait till all background images are loaded
+    // Also wait till all background images are loaded FIXME: actually doesn't wait for that...
     $images.imagesLoaded({ background: '.image' }, function() {
       $images.animate({ left: '0' }, 800);
     });

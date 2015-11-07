@@ -1,12 +1,17 @@
-template(name="appContent")
-  .jumbotron
-    h1 I wish I had something to put here! OH WELL... ¯\_(ツ)_/¯
-    +hello
+template(name="home")
+  .container#home
+    .row
+      .col-xs-12.center.nowrap
+        h1 Hello!
 
-template(name="hello")
-  button.btn.btn-info(type="button") Experimenting things here haha!
-  hr
-  each buttons
-    button.btn.btn-primary(type="button") {{name}}
-    br
+    .row
+      .col-xs-12#description
+        p Thank you for taking the time to go through this experience. The test is very simple: at each step, click on any images that you can personally relate to. You can skip a specific collage, or click on multiple images if you'd want to.<br>To start, click on "Start the test!" right at the top!
+
+//- template(name="hello")
+//-   button.btn.btn-info(type="button") Experimenting things here haha!
+//-   hr
+//-   each buttons
+//-     button.btn.btn-primary(type="button") {{name}}
+//-     br
 

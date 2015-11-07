@@ -3,21 +3,22 @@ head
 
 
 template(name="appBody")
-  .row
-    .col-sm-2
-    .col-sm-8.col-xs-12#app
-      .navbar.navbar-material-indigo.navbar-fixed-top.shadow-z-2
-        .container-fluid.navbar-inner
-          .navbar-header
-            a.navbar-brand(href="/") Home
-          
-          ul.nav.navbar-nav
-            li
-              a(href="{{pathFor 'newTest'}}") Start the test!
-            li
-              a(href="{{pathFor 'hello'}}") Lol
+  .navbar.navbar-material-indigo.shadow-z-2
+    .container.navbar-inner
+      .navbar-header
+        a.navbar-brand(href="/") Home
+      
+      ul.nav.navbar-nav
+        li
+          a(href="{{pathFor 'newTest'}}") Start the test!
+        //- li
+        //-   a(href="{{pathFor 'hello'}}") Lol
+  .container
+    .row
+      .col-sm-2
+      .col-sm-8.col-xs-12#app
 
-      #content.row
-        #content-container.jumbotron
-          +yield
-    .col-sm-2
+        #content.row
+          #content-container.jumbotron
+            +yield
+      .col-sm-2

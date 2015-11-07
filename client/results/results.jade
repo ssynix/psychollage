@@ -6,28 +6,28 @@ template(name='results')
 
     .row
       .col-xs-12.center.nowrap
-        h5.result-label.left Introversion
+        h5.result-label.left Extraversion
         .progress.progress-striped.active
           .progress-bar(style="width: {{ result.I }}")
-        h5.result-label.right Extraversion
+        h5.result-label.right Introversion
 
     .row
       .col-xs-12.center.nowrap
-        h5.result-label.left Intuition
+        h5.result-label.left Sensing
         .progress.progress-striped.active
           .progress-bar.progress-bar-warning(style="width: {{ result.N }}")
-        h5.result-label.right Sensing
+        h5.result-label.right Intuition
 
     .row
       .col-xs-12.center.nowrap
-        h5.result-label.left Thinking
+        h5.result-label.left Feeling
         .progress.progress-striped.active
           .progress-bar.progress-bar-success(style="width: {{ result.T }}")
-        h5.result-label.right Feeling
+        h5.result-label.right Thinking
 
     .row
       .col-xs-12.center.nowrap
-        h5.result-label.left Perceiving
+        h5.result-label.left Judging
         .progress.progress-striped.active
           .progress-bar.progress-bar-danger(style="width: {{ result.P }}")
-        h5.result-label.right Judging
+        h5.result-label.right Perceiving
